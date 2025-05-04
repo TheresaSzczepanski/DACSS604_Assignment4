@@ -5,7 +5,7 @@ account: taszczepansk
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 14627334
-bundleId: 10188267
+bundleId: 10228723
 url: https://taszczepansk.shinyapps.io/DACSS604_Assignment4/
 version: 1
 asMultiple: FALSE
