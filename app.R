@@ -20,9 +20,8 @@ ui <- dashboardPage(
      titleWidth = 650),
   dashboardSidebar(
     menuItem("ELA", tabName = "ela", icon = icon("book-bookmark"),
-             menuSubItem("G10 ELA Content", tabName = "g10ELAContent"),
-             menuSubItem("G10 ELA Writing Analysis", tabName = "g10ELAWritingAnalysis"),
-             menuSubItem("G10 ELA Reading Analysis", tabName = "g10ELAReadingAnalysis")
+             menuSubItem("G10 ELA Exam Structure", tabName = "g10ELAContent"),
+             menuSubItem("G10 ELA Reading Performance", tabName = "g10ELAReadingPerformance")
     )
   ),
 
@@ -87,6 +86,31 @@ ui <- dashboardPage(
                               </ul>
                           </p>")
                          ),
+                  
+                  h2("Available Selected Response Points by Domain Cluster"),
+                  HTML("<p>The 2025 <b> G10 ELA </b> exam consisted of 27 selected response
+              questions worth in <b>total 33 points </b>.</p>"),
+                  
+                  
+                  fluidRow(
+                    # A static valueBox
+                    valueBox(14 , HTML("<p> Craft and Structure </p>"), icon = icon("paragraph"), color = "blue"),
+                    valueBox(11 , HTML("<p> Key Ideas <br> and Details</p>"), icon = icon("circle-info"), color = "blue"),
+                    
+                    valueBox(3 , HTML("<p> Integration of <br> Knowledge and Ideas</p>"), icon = icon("magnifying-glass-chart"), color = "blue"),
+                    
+                    
+                    
+                    valueBox(2, HTML("<p> Knowledge of <br>Language </p>"), icon = icon("message"), color = "blue"),
+                    
+                    valueBox(2, HTML("<p> Vocabulary <br> Acquisition & Use</p>"), icon = icon("spell-check"), color = "blue"),
+                    valueBox(1 , HTML("<p> Conventions </p>"), icon = icon("quote-right"), color = "blue"),
+                    box( title = "Notes", width = 4, solidHeader = FALSE,
+                         HTML("<p> Read more about the <a href =
+                      'https://www.doe.mass.edu/frameworks/ela/2017-06.pdf'>
+                       anchor standards </a> in the frameworks.</p>"))
+                  ),
+                  
                   h3("Writing"),
                   fluidRow(
                     valueBox( 12,HTML("<p>Essay: <br> Idea Development <p>"),icon = icon("lightbulb"), color = "light-blue"),
@@ -102,9 +126,24 @@ ui <- dashboardPage(
                     
                   )
                     
-              )
+              ),
             
+            tabItem("g10ELAReadingPerformance",
+              span(h1("How do we support reading?")), #style = "color:black")),
+              h3("Rising Tide - State Diff: Reading"),
+              #  plotOutput("distPlot")
+              valueBox(9  ,HTML("<p> Reading: <br>Comprehension</p>"),icon = icon("book-open-reader"), color = "blue"),
+              valueBox(11, HTML("<p>Reading: <br>Language Conv. <br> & Vocabulary </p>"), icon = icon("quote-left"), color = "blue"),
+              box( width = 4, solidHeader = FALSE,
+                   HTML("<p> In <b> contrast</b> to their reading scores by text type,
+                    Rising Tide students lost writing points at rates independent of the text type and student performance level.
+                    This suggests the need to review the practice of writing in <b> both ELA and Social Studies </b>. </p>")
+              )
             )
+            
+          )
+            
+            
            
           )
         #)
